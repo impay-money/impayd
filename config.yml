@@ -1,0 +1,31 @@
+version: 1
+build:
+  binary: impayd
+accounts:
+- name: main
+  coins:
+  - 10000000000000000impy
+genesis:
+  app_state:
+    crisis:
+      constant_fee:
+        denom: impy
+    evm:
+      params:
+        evm_denom: impy
+    gov:
+      deposit_params:
+        min_deposit:
+        - amount: "1000000"
+          denom: impy
+    mint:
+      params:
+        mint_denom: impy
+    staking:
+      params:
+        bond_denom: impy
+  chain_id: impay-testnet
+validators:
+- name: main
+  bonded: 100000000000impy
+  home: $HOME/.impayd
